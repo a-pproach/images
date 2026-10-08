@@ -1,7 +1,7 @@
 {
   "id": "/images/liveask-demo/",
-  "name": "LiveAsk Demo QR",
-  "short_name": "LiveAsk Demo",
+  "name": "DEMO",
+  "short_name": "DEMO",
   "description": "QR code linking to liveask.au/demo",
   "start_url": "./",
   "scope": "./",
