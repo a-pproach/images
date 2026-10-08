@@ -1,0 +1,30 @@
+{
+  "id": "contact-qr-phone",
+  "name": "Chris's V-Card",
+  "short_name": "V-Card",
+  "description": "QR code that saves Chris Carroll to contacts",
+  "start_url": "./contact.html",
+  "scope": "./contact.html",
+  "display": "fullscreen",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "contact-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "contact-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
