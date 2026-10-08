@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>LiveAsk QR</title>
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="manifest" href="liveask-manifest.json">
+<link rel="icon" href="liveask-icon-192.png">
+<link rel="apple-touch-icon" href="liveask-icon-192.png">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    max-width: 92vw;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+  <img src="liveask.png" alt="LiveAsk QR code">
+
+<script>
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
+                        window.matchMedia('(display-mode: fullscreen)').matches ||
+                        window.navigator.standalone === true;
+  let fullscreenRequested = false;
+  function requestFullscreenOnce() {
+    if (fullscreenRequested || !isStandalone) return;
+    fullscreenRequested = true;
+    const el = document.documentElement;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen;
+    if (req) req.call(el).catch(() => {});
+  }
+  if (isStandalone) {
+    document.body.addEventListener('pointerdown', requestFullscreenOnce, { once: true });
+    requestFullscreenOnce();
+  }
+</script>
+</body>
+</html>
